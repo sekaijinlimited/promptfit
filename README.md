@@ -159,6 +159,37 @@ All options can be set via CLI flags. No config file needed.
 3. The LLM structures it into a detailed ticket with acceptance criteria
 4. The ticket is piped to your coding agent, which executes with precision
 
+## Claude Code Integration
+
+Use `promptfit` as a native slash command inside Claude Code.
+
+### Install
+
+```bash
+# One-liner: install CLI + slash command
+npm install -g promptfit && bash <(curl -s https://raw.githubusercontent.com/user/promptfit/main/install-command.sh)
+
+# Or manually
+cp commands/refine.md .claude/commands/refine.md
+```
+
+### Usage
+
+In Claude Code, type:
+
+```
+/refine fix the login button on mobile
+```
+
+Claude Code will:
+1. Run `pf` with your prompt to generate a structured ticket
+2. Use the ticket as the implementation specification
+3. Implement the task following the acceptance criteria
+
+### ECC Compatibility
+
+`promptfit` ships as an [ECC](https://github.com/anthropics/ecc)-compatible skill. The slash command lives in `commands/refine.md` and the skill definition is in `skills/prompt-refinement/skill.md`.
+
 ## Supported Models
 
 Any Ollama model works. Recommended:
