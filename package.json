@@ -1,0 +1,41 @@
+{
+  "name": "promptfit",
+  "version": "1.0.0",
+  "description": "Turn vague requests into structured tickets for coding agents. Save tokens, ship faster.",
+  "type": "module",
+  "main": "dist/cli.js",
+  "bin": {
+    "pf": "./dist/cli.js",
+    "promptfit": "./dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node dist/cli.js",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "cli",
+    "ai",
+    "prompt",
+    "llm",
+    "ollama",
+    "claude",
+    "codex",
+    "coding-agent",
+    "ticket",
+    "refiner"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "commander": "^12.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "typescript": "^5.5.0"
+  }
+}
